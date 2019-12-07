@@ -2,14 +2,40 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\User;
+use App\Form\RegistrationType;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 
 class OfappController extends AbstractController
 {   
+    //Formulaire d'inscription
+        /**
+         * @Route("/inscription", name="security_registartion")
+         */
+        public function registration(Request $request, ObjectManager $manager)
+        {
+            $user = new User();
+            
+            $form = $this->createForm(RegistrationType::class, $user);
+            
+            $form->handleRequest($request);
+           
+            if($form->isSubmitted() && $form->isValid())
+            {
+                $manager->persist($user);
+                $manager->flush();
+            }
+
+            return $this->render('security/registration.html.twig',[
+                'form' => $form->createView()   
+            ]);
+        }
     //Formulaire de connexion
         /**
-         * @Route("/", name="ofapp")
+         * @Route("/connexion", name="ofapp")
          */
         public function index()
         {
