@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}      
+{% block title %}Page de Connexion {% endblock %}
+{% block body %}
+    <div class="container">  
+        <div class="row justify-content-md-center">
+            <img src="/image/sigleSteg.png">
+        </div>
+        <div class="row justify-content-md-center">
+            {{ form_start(connexion) }}
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form_row(connexion.username,{'label': 'Utilisateur :' ,'attr':{'placeholder':'Walid...'}})}}
+                        {{ form_row(connexion.email, {'label': 'Email :','attr':{'placeholder':'walidnagga@gmail.com...'}}) }}
+                        {{ form_row(connexion.password,{'label':'Mot de passe :','attr':{'placeholder':'Mot de passe...'}}) }}
+                        <br>
+                        <div class="row justify-content-start">
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">Se connecter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{ form_end(connexion) }}
+        </div>                     
+            
+    </div>
+{% endblock %}
+
+
