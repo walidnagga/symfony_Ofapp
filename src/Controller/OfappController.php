@@ -4,7 +4,8 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RegistrationType;
-use Doctrine\Common\Persistence\ObjectManager;
+use App\Form\ConnexionType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,7 +16,7 @@ class OfappController extends AbstractController
         /**
          * @Route("/inscription", name="security_registartion")
          */
-        public function registration(Request $request, ObjectManager $manager)
+        public function registration(Request $request, EntityManagerInterface $manager)
         {
             $user = new User();
             
@@ -30,16 +31,23 @@ class OfappController extends AbstractController
             }
 
             return $this->render('security/registration.html.twig',[
-                'form' => $form->createView()   
+                'inscrit' => $form->createView()   
             ]);
         }
     //Formulaire de connexion
         /**
-         * @Route("/connexion", name="ofapp")
+         * @Route("/", name="ofapp")
          */
-        public function index()
+        public function connexion()
         {
-            return $this->render('ofapp/index.html.twig');
+            $user = new User();
+            
+            $form = $this->createForm(ConnexionType::class, $user);
+            
+            
+            return $this->render('security/connexion.html.twig',[
+                'connexion'=>$form->createView()
+            ]);
         }
     // Affichage de l'interface du chef du projet
         /**
