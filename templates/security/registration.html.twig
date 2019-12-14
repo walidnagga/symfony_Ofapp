@@ -7,11 +7,11 @@
             <img src="/image/sigleSteg.png">
         </div>
         <div class="row justify-content-md-center">
-            {{ form_start(inscrit) }}
+            {{ form_start(form) }}
                 <div class="row">
                     <div class="col-md-4">
-                        {{ form_row(inscrit.username,{'label': 'Utilisateur :' ,'attr':{'placeholder':'Walid...'}})}}
-                        {{ form_row(inscrit.email, {'label': 'Email :','attr':{'placeholder':'walidnagga@gmail.com...'}}) }}
+                        {{ form_row(form.username,{'label': 'Utilisateur :' ,'attr':{'placeholder':'Walid...'}})}}
+                        {{ form_row(form.email, {'label': 'Email :','attr':{'placeholder':'walidnagga@gmail.com...'}}) }}
                         <div class="row justify-content-start">
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary">S'inscrire</button>
@@ -19,13 +19,12 @@
                     </div>
                     </div>
                     <div class="col-md-4">
-                        {{ form_row(inscrit.password,{'label':'Mot de passe :','attr':{'placeholder':'Mot de passe...'}}) }}
-                        {{ form_row(inscrit.confirm_password,{'label':'Mot de passe :','attr':{'placeholder':'Mot de passe...'}}) }}
+                        {{ form_row(form.password,{'label':'Mot de passe :','attr':{'placeholder':'Mot de passe...'}}) }}
+                        {{ form_row(form.confirm_password,{'label':'Confirmer :','attr':{'placeholder':'retapper le mot de passe...'}}) }}
                     </div>   
-                    <br>
-                   
+                    <br>                   
                 </div>
-             {{ form_end(inscrit) }}    
+             {{ form_end(form) }}    
         </div>                     
            
     </div>
