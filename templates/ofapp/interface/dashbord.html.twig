@@ -1,0 +1,170 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tableau de bord {% endblock %}
+{% block body %}
+    <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>150</h3>
+                <p>Nombre de dossiers </p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>75<sup style="font-size: 20px"></sup></h3>
+
+                <p>Dossiers cloturés</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>63</h3>
+
+                <p>Dossiers en cours</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>12</h3>
+
+                <p>Dossiers Annulés</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+        <!-- /.row -->
+        
+        <br><br><br>
+        <div class="card">
+            <div class="card-header border-transparent">
+                <h3 class="card-title">Latest Orders</h3>   
+            </div>
+              <!-- /.card-header -->
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                <table class="table m-0">
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>CIN</th>
+                            <th>Prenom</th>
+                            <th>Nom</th>
+                            <th>Montant</th>
+                            <th>Etape</th>
+                            <th>Détail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                            <td>05758692</td>
+                            <td>Mohamed</td>
+                            <td>Turki</td>
+                            <td>2000.500</td>
+                            <td><span class="badge badge-success">cloturé</span></td>
+                            <td><a href="pages/examples/invoice.html">info</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                            <td>05758692</td>
+                            <td>Mohamed</td>
+                            <td>Turki</td>
+                            <td>2000.500</td>
+                            <td><span class="badge badge-warning">Expertise</span></td>
+                            <td><a href="pages/examples/invoice.html">info</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                            <td>05758692</td>
+                            <td>Mohamed</td>
+                            <td>Turki</td>
+                            <td>2000.500</td>
+                            <td><span class="badge badge-danger">Annulé</span></td>
+                            <td><a href="pages/examples/invoice.html">info</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                            <td>05758692</td>
+                            <td>Mohamed</td>
+                            <td>Turki</td>
+                            <td>2000.500</td>
+                            <td><span class="badge badge-primary">Enquete</span></td>
+                            <td><a href="pages/examples/invoice.html">info</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                            <td>05758692</td>
+                            <td>Mohamed</td>
+                            <td>Turki</td>
+                            <td>2000.500</td>
+                            <td><span class="badge badge-success">cloturé</span></td>
+                            <td><a href="pages/examples/invoice.html">info</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                            <td>05758692</td>
+                            <td>Mohamed</td>
+                            <td>Turki</td>
+                            <td>2000.500</td>
+                            <td><span class="badge badge-primary">Enquete</span></td>
+                            <td><a href="pages/examples/invoice.html">info</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                            <td>05758692</td>
+                            <td>Mohamed</td>
+                            <td>Turki</td>
+                            <td>2000.500</td>
+                            <td><span class="badge badge-warning">Expertise</span></td>
+                            <td><a href="pages/examples/invoice.html">info</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <!-- /.table-responsive -->
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix">
+                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
+                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
+              </div>
+              <!-- /.card-footer -->
+        </div>  
+    </div>
+                             
+{% endblock %}
+
+
+            

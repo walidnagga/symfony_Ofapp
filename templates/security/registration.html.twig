@@ -1,28 +1,86 @@
-{% extends 'base.html.twig' %}
 
-{% block title %}page d'enregistrement{% endblock %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-{% block body %}
-    <form method="post">
-        
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
-        <div class="row justify-content-md-center">
-            <img src="/image/sigleSteg.png">
-        </div>
-        <div class="row justify-content-md-center">
-            <div class="row">
-                <div class="col-sm-8">
+
+<div class="container">
+    <br>  <h2 class="text-center">Ajouter des Utilisateurs </h2>
+    <hr>
+
+    <div class="row justify-content-center">
+        <aside class="col-sm-4">
             
-                    {{ form_start(form) }}
-                    {{ form_row(form.username, {'label':'Utilisateur :', 'attr': {'placeholder':'utilisateur'}}) }}
-                    {{ form_row(form.email, {'label':'Email :', 'attr': {'placeholder':'adresse email'}}) }}
-                    {{ form_row(form.password, {'label':'Mot de passe :', 'attr': {'placeholder':'mot de passe'}}) }}
-                    {{ form_row(form.confirm_password, {'label':'Confirmer :', 'attr': {'placeholder':'retaper le mot de passe'}}) }}
-                    <button type="submit" class="btn btn-primary">inscription</button>
-                    {{ form_end(form) }}
-                     
-                </div>
-            </div>
-        </div>
-    </form>
-{% endblock %}
+            <div class="card">
+                <article class="card-body">
+                    <h4 class="card-title text-center mb-4 mt-1">Inscription</h4>
+                    <hr>
+                    <form method="post">
+                        {{ form_start(form,{'method': 'POST'}) }}
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                    </div>
+                                    {{ form_widget(form.username, {'attr': {'placeholder':'Utilisateur'}}) }}
+                                    {#<input name="username" class="form-control" placeholder="Utilisateur..." type="text">#}
+                                </div> <!-- input-group.// -->
+                            </div> <!-- form-group// -->
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                    </div>
+                                    {{ form_widget(form.email, {'attr': {'placeholder':'Email ...'}}) }}
+                                </div> <!-- input-group.// -->
+                            </div> <!-- form-group// -->
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                    </div>
+                                    {{ form_widget(form.password, {'attr': {'placeholder':'Mot de passe...'}}) }}
+                                    
+                                </div> <!-- input-group.// -->
+                            </div> <!-- form-group// -->
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                    </div>
+                                    {{ form_widget(form.confirm_password, {'attr': {'placeholder':'Confirmer...'}}) }}
+                                    
+                                </div> <!-- input-group.// -->
+                            </div> <!-- form-group// -->
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block"> Inscription  </button>
+                            </div> <!-- form-group// -->
+                        {{ form_end(form) }} 
+                    </form>
+                </article>
+            </div> <!-- card.// -->
+
+        </aside> <!-- col.// -->
+    </div> <!-- row.// -->
+
+</div> 
+    <!--container end.//-->
+
+<br><br><br>
+<article class="bg-secondary mb-3">  
+    <div class="card-body text-center">
+        <h4 class="text-white">LA SOCIETE TUNISIENNE DE L'ELECTRICITE ET DU GAZ <br> Direction Centrale de Production et du Transport Gaz </h4>
+        <p class="h5 text-white"> Siège Social: 38, Rue Kamel Ataturk, BP.190-1080 Tunis CEDEX  
+        and product landing pages</p>   <br>
+        <p><a class="btn btn-warning" target="_blank" href="http://wwww.steg.com.tn/"> Site Web : Steg.com.tn  
+        <i class="fa fa-window-restore "></i></a></p>
+    </div>
+    <br><br><br>
+</article>

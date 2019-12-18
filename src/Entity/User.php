@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
-
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(fields={"email"}, message="email non disponible")
  */
 class User implements UserInterface
 {
@@ -16,28 +17,37 @@ class User implements UserInterface
      * @ORM\Column(type="integer")
      */
     private $id;
-
+    
     /**
      * @ORM\Column(type="string", length=180, unique=true)
      */
     private $username;
+
+     /**
+     * @ORM\Column(type="string", length=180)
+     * @Assert\Email()
+     */
+    private $email;
+
+    /**
+     * @var string The hashed password
+     * @Assert\Length(min="8", minMessage="minimum 8 caracteres")
+     * @ORM\Column(type="string")
+     */
+    private $password;
+
+     /**
+     * @Assert\Length(min="8", minMessage="minimum 8 caracteres")
+     * @Assert\EqualTo(propertyPath="password", message="mot de passe different")
+     */
+    public $confirm_password;
 
     /**
      * @ORM\Column(type="json")
      */
     private $roles = [];
 
-    /**
-     * @var string The hashed password
-     * @ORM\Column(type="string")
-     */
-    private $password;
-
-    /**
-     * @ORM\Column(type="string", length=180, nullable=true)
-     */
-    private $email;
-
+    
     public function getId(): ?int
     {
         return $this->id;
@@ -99,7 +109,7 @@ class User implements UserInterface
      */
     public function getSalt()
     {
-        // not needed when using the "bcrypt" algorithm in security.yaml
+        return null;
     }
 
     /**
